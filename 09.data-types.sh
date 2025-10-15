@@ -6,4 +6,4 @@ NUMBER2=200
 echo "SUM=$(($NUMBER1+$NUMBER2))"
 
 
-echo "sum is:${SUM}"
+echo "SUM is:${SUM}"
