@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID= $(id -u)
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run the script with root privilege"
@@ -8,8 +8,8 @@ fi
 
 dnf install mysql -y
 
-if [ $? -nq 0 ]; then
-    echo "ERROR:: Installating mysql is a failure"
+if [ $? -ne 0 ]; then
+    echo "ERROR:: Installating MySQL is FAILURE"
 else
-    echo "Installating mysql is a success"   
+    echo "Installating MySQL is SUCCESS"   
 fi     
