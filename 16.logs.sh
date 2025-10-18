@@ -21,10 +21,10 @@ echo "Script started executed at : $(date)"
 
 VALIDATE(){ #function receive inputs through args just like shell script args
     if [ $1 -ne 0 ]; then
-        echo -e "ERROR:: Installating $2 is $R FAILURE"
+        echo -e "ERROR:: Installating $2 is $R FAILURE $N"
         exit 1
     else
-        echo -e "Installating $2 is $G SUCCESS"   
+        echo -e "Installating $2 is $G SUCCESS $N"   
     fi     
 }
 dnf list installed mysql &>>$LOG_FILE
