@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-error (){
-    echo "There is an error in $LINENO, command is: $BASH_COMMAND"
-}
+# error (){
+#     echo "There is an error in $LINENO, command is: $BASH_COMMAND"
+# }
 
-trap error ERR
+trap '"There is an error in $LINENO, command is: $BASH_COMMAND"' ERR
 
 echo "Hello.."
 echo "Before error.."
