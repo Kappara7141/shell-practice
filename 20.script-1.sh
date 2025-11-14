@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Name =INDIA
-echo "My Country:$Name"
-echo "PID of script-1:$$"
+NAME =INDIA
+echo "My Country:$NAME"
+echo "PID of SCRIPT-1:$$"
 sh 21-script-2.sh
