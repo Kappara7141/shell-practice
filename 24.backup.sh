@@ -71,6 +71,7 @@ if [ ! -z "${FILES}" ]; then
     else
         echo -e "ARCHIEVAL ... $R FAILURE $N"
         exit 1
+    fi
 else
     echo -e "No files to archive $Y SKIPPING... $N"
 fi
