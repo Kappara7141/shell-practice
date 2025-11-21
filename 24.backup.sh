@@ -5,7 +5,7 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-N="\e[30m"
+N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
@@ -30,12 +30,12 @@ if [ $# -lt 2 ]; then
     USAGE
 fi
 
-if [ ! -d SOURCE_DIR ]; then
+if [ ! -d $SOURCE_DIR ]; then
     echo -e "$R source $SOURCE_DIR doesn't exist $N"
     exit 1
 fi
 
-if [ ! -d DEST_DIR ]; then
+if [ ! -d $DEST_DIR ]; then
     echo -e "$R destination DEST_DIR doesn't exist $N"
     exit 1
 fi
@@ -47,7 +47,7 @@ if [ ! -z "${FILES}" ]; then
     TIMESTAMP=$(date +%F-%H-%M)
     ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo "Zip file name: $ZIP_FILE_NAME"
-    echo $FILES | zip -@ -j "ZIP_FILE_NAME"
+    echo "$FILES" | zip -@ -j "$ZIP_FILE_NAME"
 else
     echo -e "No files to archive $Y SKIPPING... $N"
 fi
