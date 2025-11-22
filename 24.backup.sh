@@ -9,7 +9,8 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
+# LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
+LOG_FILE="$LOGS_FOLDER/backup.log" # Modified to run the script as command
 DAYS=${3:- 14};  #if not provided considered as 14 days
 SOURCE_DIR=$1
 DEST_DIR=$2
