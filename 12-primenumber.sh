@@ -11,6 +11,7 @@ else
         if [ $($NUMBER % i) -eq 0 ]; then
             is_prime=0
         break
+        fi
         i=$((i+1))
     done
 fi
