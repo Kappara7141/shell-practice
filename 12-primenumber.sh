@@ -1,24 +1,11 @@
 #!/bin/bash
 
-NUMBER=$1
-is_prime=1
+n=$1
 
-if [ $NUMBER -le  1]; then
-    is_prime=0
-else 
-    i=2
-    while [ $i -le $(echo "sqrt($NUMBER)" | bc) ];do
-        if [ $($NUMBER % i) -eq 0 ]; then
-            is_prime=0
-        break
-        fi
-        i=$((i+1))
-    done
-fi
+echo "please enter the number:"
 
-if [ $is_prime -eq 1 ]; then
-    echo "Prime"
-else
-    echo "NOT prime"
-fi
-    
+for ((i=2;i*i<=n;i++)); do
+  ((n%i==0)) && echo "Given number $n is Not Prime" && exit
+done
+
+((n>1)) && echo " Given number $n is Prime" || echo "Given number $n is Not Prime"
