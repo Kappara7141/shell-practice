@@ -6,7 +6,7 @@ error(){
     echo "There is an error in $LINENO, Command is: $BASH_COMMAND"
 }
 
-Trap error ERR
+trap error ERR
 
 echo "Hello..."
 echo "Before Error"
